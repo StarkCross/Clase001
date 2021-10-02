@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "usuariosapp-2bd3a": {
+      "hosting": {
+        "clase001": [
+          "usuariosapp-2bd3a"
+        ]
+      }
+    }
+  }
+}
