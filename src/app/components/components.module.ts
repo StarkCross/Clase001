@@ -24,6 +24,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { UserActionsComponent } from './user-actions/user-actions.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { LoginComponent } from './login/login.component';
+import { TelefonoComponent } from './telefono/telefono.component';
 
 @NgModule({
   imports: [
@@ -53,6 +54,7 @@ import { LoginComponent } from './login/login.component';
     CustomdatePipe,
     CalculadoraComponent,
     LoginComponent,
+    TelefonoComponent,
 
   ],
   exports: [
