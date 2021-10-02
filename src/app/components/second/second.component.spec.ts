@@ -3,21 +3,21 @@ import {
   TestBed,
 } from '@angular/core/testing';
 
-import { Second } from './second.component';
+import { SecondComponent } from './second.component';
 
 describe('SecondComponent', () => {
-  let component: Second;
-  let fixture: ComponentFixture<Second>;
+  let component: SecondComponent;
+  let fixture: ComponentFixture<SecondComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Second ]
+      declarations: [ SecondComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Second);
+    fixture = TestBed.createComponent(SecondComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

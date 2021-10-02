@@ -1,0 +1,110 @@
+<div class="card text-center">
+  <div class="card-header">
+    <h2>Lista de usuarios</h2>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-primary" (click)="registrarUsuario()">
+        Routing Nuevo Usuario <i class="fa fa-plus mr-1"></i>
+      </button>
+      <button
+        class="btn btn-primary"
+        (click)="mostrarModalNuevoUsuario(modalRegistrarUsuario)"
+      >
+        Modal Nuevo Usuario <i class="fa fa-plus ml-1"></i>
+      </button>
+
+      <button
+      class="btn btn-primary"
+      (click)="mostrarModalNuevoTelefono(modalRegistrarTelefono)"
+      >
+      Modal Nuevo Telefono <i class="fa fa-plus ml-1"></i>
+      </button>
+
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <th><i class="fa fa-pencil-square-o"></i></th>
+        <th><i class="fa fa-trash"></i></th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Correo</th>
+        <th>Telefono</th>
+        <th>Clave</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let usuario of lista_usuarios">
+          <td>
+            <button
+              class="btn btn-success"
+              (click)="mostrarUsuario(usuario)"
+              title="Editar"
+            >
+              <i class="fa fa-pencil-square-o"></i>
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-danger"
+              (click)="eliminarUsuario(usuario.usuario_id)"
+              title="Editar"
+            >
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+
+          <td>{{ usuario.nombres }}</td>
+          <td>{{ usuario.apellidos }}</td>
+          <td>{{ usuario.correo }}</td>
+          <td>{{ usuario.nro_telefono }}</td>
+          <td>{{ usuario.clave }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #modalRegistrarUsuario let-c="close" let-d="dismiss">
+  <div class="modal-header d-flex align-items-center">
+    <span class="h5 m-0"><i class="fa fa-filter mr-1"></i>Modal de Imagen</span>
+    <button class="close d-flex text-dark m-0 p-0" (click)="d('Cross click')">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <my-component></my-component>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-lg"
+      (click)="c('Close')"
+    >
+      Cerrar
+    </button>
+  </div>
+</ng-template>
+
+
+<ng-template #modalRegistrarTelefono let-c="close" let-d="dismiss">
+  <div class="modal-header d-flex align-items-center">
+    <span class="h5 m-0"><i class="fa fa-filter mr-1"></i>Modal de Imagen Tel</span>
+    <button class="close d-flex text-dark m-0 p-0" (click)="d('Cross click')">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <my-component></my-component>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-secondary btn-lg"
+      (click)="c('Close')"
+    >
+      Cerrar
+    </button>
+  </div>
+</ng-template>

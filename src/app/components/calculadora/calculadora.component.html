@@ -1,0 +1,64 @@
+<div class="card">
+  <div class="card-header">
+    <h3>{{ titulo | uppercase }} {{ fecha_actual | customdate }}</h3>
+  </div>
+  <div class="card-body">
+    <div class="p-3 text-center">
+      <ng-template ngFor let-item [ngForOf]="numbers_calc">
+        <!-- [textButton]="item.value" -->
+        <button-calc
+          [classIn]="item.class"
+          [itemIn]="item"
+          (eventClick)="clickParent($event)"
+        ></button-calc>
+      </ng-template>
+      <hr class="sidebar-divider" />
+      <div class="d-flex">
+        <button-calc
+          [classIn]="'btn-secondary'"
+          [itemIn]="{ value: 'Result' }"
+          (eventClick)="functionCalc()"
+        ></button-calc>
+        <input
+          #inputCalc
+          id="inputCalc"
+          class="form-control"
+          type="text"
+          [(ngModel)]="model"
+          (keyup.enter)="functionCalc()"
+          (keyup)="keyFindBtn($event)"
+        />
+        <button-calc
+          classIn="btn-secondary"
+          [itemIn]="{ value: 'Clear' }"
+          (eventClick)="functionClearCalc()"
+        ></button-calc>
+      </div>
+      <h1>{{ result }}</h1>
+
+      <button-calc
+        classIn="btn-warning"
+        [itemIn]="{ value: 'PrintViewChild' }"
+        (eventClick)="printViewChild(inputCalc)"
+      >
+      </button-calc>
+      <!-- <hr class="sidebar-divider" /> -->
+      <!-- <ng-template [ngIf]="bool_check"> -->
+      <!-- </ng-template> -->
+      <!-- *ngIf="model == 'clave'; else elseBlock" -->
+      <!-- <div class="d-block">
+          <input type="text" [(ngModel)]="model" />
+          <button
+            class="btn btn-info mx-1"
+            type="button"
+            (click)="functionClearCalc()"
+          >
+            Result
+          </button>
+          <h1>{{ model }}</h1>
+        </div> -->
+      <!-- <ng-template #elseBlock> </ng-template> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

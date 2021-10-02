@@ -1,0 +1,50 @@
+<form #frmAcceso="ngForm" class="form-enable">
+  <div class="d-flex justify-content-center">
+    <div class="card">
+      <div class="card-header">Datos de acceso</div>
+      <div class="card-body">
+        <div class="form-group">
+          <label>correo:</label>
+          <input
+            name="inp_correo"
+            #inp_correo="ngModel"
+            type="text"
+            class="form-control"
+            [(ngModel)]="usuario.correo"
+            required="true"
+          />
+          <div>
+            <span class="text-danger" *ngIf="inp_correo.invalid"
+              >*El correo es obligatorio</span
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Contraseña:</label>
+          <input
+            name="inp_clave"
+            #inp_clave="ngModel"
+            type="password"
+            class="form-control"
+            [(ngModel)]="usuario.clave"
+            required="true"
+          />
+          <div>
+            <span class="text-danger" *ngIf="inp_clave.invalid"
+              >*La contraseña es obligatoria</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button
+          class="btn btn-success ml-3"
+          (click)="ingresar(frmAcceso)"
+          [disabled]="frmAcceso.invalid"
+        >
+          Ingresar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

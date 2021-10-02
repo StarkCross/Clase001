@@ -1,26 +1,19 @@
 import {
-  Component
+  Component,
+  OnInit,
 } from '@angular/core';
 
 @Component({
-  selector: 'second',
+  selector: 'app-second',
   templateUrl: './second.component.html',
-  styleUrls: ['./second.component.css']
+  styleUrls: ['./second.component.scss']
 })
 
-export class Second  {
+export class SecondComponent implements OnInit {
 
+  constructor() { }
 
-  content: string;
-  btnText: string;
-
-  constructor() {
-    this.content = 'Hello World';
-    this.btnText = 'Ejecutar';
+  ngOnInit(): void {
   }
 
-  clickOnButton($event: any) {
-    console.log('$event:', $event);
-    alert('click-');
-  }
 }
